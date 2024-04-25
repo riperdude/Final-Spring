@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
                     firePoint.LookAt(theCamera.position + (theCamera.forward * 30f));
                 }
 
-                Instantiate(Bullet, firePoint.position, firePoint.rotation);
+                Instantiate(Twig, firePoint.position, firePoint.rotation);
                 _ammo.RemoveAmmo();
         }
     }
