@@ -6,29 +6,28 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public TextMeshProUGUI targetText;
+    public TextMeshProUGUI keyText;
     public string youWonScene;
     public string youLostScene;
 
-    private int _targetAmount;
+    private int _keyAmount;
 
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        int standingTargetAmount = GameObject.FindGameObjectsWithTag("Floating target").Length;
-        int floatingTargetAmount = GameObject.FindGameObjectsWithTag("Target").Length;
-        _targetAmount = floatingTargetAmount + standingTargetAmount;
-        targetText.text = "Targets: " + _targetAmount.ToString();
+       Cursor.lockState = CursorLockMode.Locked;
+        int doorKeyAmount = GameObject.FindGameObjectsWithTag("Key").Length;
+        _keyAmount = doorKeyAmount;
+        keyText.text = "Keys to go: " + _keyAmount.ToString();
     }
 
     // Update is called once per frame
-    public void UpdateTargetAmount(int amount)
+    public void UpdateKeyAmount(int amount)
     {
-        _targetAmount += amount;
-        targetText.text = "Targets: " + _targetAmount.ToString();
+        _keyAmount += amount;
+        keyText.text = "Keys to go: " + _keyAmount.ToString();
 
-        if(_targetAmount <= 0)
+        if(_keyAmount <= 0)
         {
             SceneManager.LoadScene("You Won");
         }
