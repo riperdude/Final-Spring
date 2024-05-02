@@ -14,7 +14,7 @@ public class Ammo : MonoBehaviour
     void Start()
     {
         _ammoBoxAmount = Random.Range(3, 7);
-        ammoText.text = "Ammo: " + _ammoAmount.ToString();
+        ammoText.text = "Twigs: " + _ammoAmount.ToString();
     }
 
     // Update is called once per frame
