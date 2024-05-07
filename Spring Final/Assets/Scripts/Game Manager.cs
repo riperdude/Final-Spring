@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
         int doorKeyAmount = GameObject.FindGameObjectsWithTag("Key").Length;
         _keyAmount = doorKeyAmount;
         keyText.text = "Keys to go: " + _keyAmount.ToString();
@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
 
         if(_keyAmount <= 0)
         {
-            SceneManager.LoadScene("You Won");
+            Tag("Door").SetActive(false);
         }
     }
 }

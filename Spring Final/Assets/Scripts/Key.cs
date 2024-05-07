@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-public class Target : MonoBehaviour
+public class Key : MonoBehaviour
 {
     void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.CompareTag("Twig"))
+        if(other.gameObject.CompareTag("Player"))
         {
-            if(this.gameObject.tag == "Floating target")
+            if(this.gameObject.tag == "Key")
             {
                 //Destroy(this.gameObject);
                 GameObject.Find("Game Manager").GetComponent<GameManager>().UpdateKeyAmount(-1);
