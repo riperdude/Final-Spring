@@ -29,7 +29,12 @@ public class GameManager : MonoBehaviour
 
         if(_keyAmount <= 0)
         {
-            Tag("Door").SetActive(false);
+            int doorAmount = GameObject.FindGameObjectsWithTag("Door").Length;
+
+            for(int i = 0; i < doorAmount; i++)
+            {
+                Destroy(GameObject.FindGameObjectWithTag("Door"));
+            }
         }
     }
 }

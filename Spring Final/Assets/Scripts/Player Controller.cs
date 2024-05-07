@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Sticks"))
+        if(other.gameObject.CompareTag("Player"))
         {
             _ammo.AddAmmo();
             other.gameObject.SetActive(false);
