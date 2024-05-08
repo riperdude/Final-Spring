@@ -10,13 +10,6 @@ public class Key : MonoBehaviour
         {
             if(this.gameObject.tag == "Key")
             {
-                //Destroy(this.gameObject);
-                GameObject.Find("Game Manager").GetComponent<GameManager>().UpdateKeyAmount(-1);
-                this.gameObject.SetActive(false);
-            }
-            //add grayscale to standing target later
-            if(this.gameObject.tag == "Target")
-            {
                 GameObject.Find("Game Manager").GetComponent<GameManager>().UpdateKeyAmount(-1);
                 this.gameObject.SetActive(false);
             }
