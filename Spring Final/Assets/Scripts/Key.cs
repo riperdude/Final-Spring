@@ -15,4 +15,16 @@ public class Key : MonoBehaviour
             }
         }
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            if(this.gameObject.tag == "Key")
+            {
+                GameObject.Find("Game Manager").GetComponent<GameManager>().UpdateKeyAmount(-1);
+                this.gameObject.SetActive(false);
+            }
+        }
+    }
 }
