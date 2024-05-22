@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
             for(int i = 0; i < doorAmount; i++)
             {
                 Destroy(GameObject.FindGameObjectWithTag("Door"));
+                Debug.Log("I destroyed door number " + i);
             }
         }
     }
