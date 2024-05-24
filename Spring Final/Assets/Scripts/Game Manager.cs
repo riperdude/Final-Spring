@@ -11,13 +11,16 @@ public class GameManager : MonoBehaviour
     public string youLostScene;
 
     private int _keyAmount;
+    private int _honeyAmount;
 
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         int doorKeyAmount = GameObject.FindGameObjectsWithTag("Key").Length;
+        int honeyEndAmount = GameObject.FindGameObjectsWithTag("Honey").Length;
         _keyAmount = doorKeyAmount;
+        _honeyAmount = honeyEndAmount;
         keyText.text = "Keys to go: " + _keyAmount.ToString();
     }
 
@@ -36,6 +39,13 @@ public class GameManager : MonoBehaviour
                 Destroy(GameObject.FindGameObjectWithTag("Door"));
                 Debug.Log("I destroyed door number " + i);
             }
+        }
+        
+        _honeyAmount += amount;
+
+        if(_honeyAmount <= 0)
+        {
+            SceneManager.LoadScene("End Menu");
         }
     }
 }
